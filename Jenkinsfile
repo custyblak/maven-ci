@@ -27,7 +27,7 @@ pipeline {
             environment {
                sonarscan = tool 'my-first-sonarqube'
             }
-            withSonarQubeEnv(credentialsId: 'sonarqube-jenkins'installationName: 'my-sonarqube') {
+            withSonarQubeEnv(credentialsId: 'sonarqube-jenkins' installationName: 'my-sonarqube') {
                   sh "$sonarscan/bin/sonar-scanner -Dsonar.projectKey=my-jenkins-job -Dsonar.projectName='my-jenkins-job'"
             }
         }
