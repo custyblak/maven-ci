@@ -1,29 +1,29 @@
 pipeline {
     agent any
-    tools {
+    tools{
         maven 'maven-3.9.9'
     }
 
-    stages {
+    stages{
         stage('Git Checkout') {
-            steps {
+            steps{
                 checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/custyblak/maven-ci.git']])
             }
 
         stage('Validate') {
-            steps {
+            steps{
                 sh 'mvn validate'
             }
 
         }
         stage('Compile')  {
-            steps {
+            steps{
                 sh 'mvn compile'
             }
 
         }
         stage('Test') {
-            steps {
+            steps{
                 sh 'mvn test'
             }
 
