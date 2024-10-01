@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage('Git Checkout') {
             steps{
-                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'My-Github-creds', url: 'https://github.com/custyblak/maven-ci.git']])
+                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'My-Github-creds', url: 'https://github.com/custyblak/maven-ci.git']])
             }
         }
 
