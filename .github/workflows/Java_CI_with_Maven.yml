@@ -14,7 +14,8 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'maven'
+        maven-version: 3.8.1
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
