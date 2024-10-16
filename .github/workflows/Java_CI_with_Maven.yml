@@ -3,7 +3,6 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ]
-  pull_request:
 jobs:
   build:
 
@@ -31,4 +30,4 @@ jobs:
       with:
         context: DockerFileFolder/
         push: true
-        tags: ${{var.DOCKERHUB_NAMESPACE}}/vprofiledb:v1
+        tags: custyblak/vprofiledb:v1
